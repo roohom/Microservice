@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 1 加载 jdbc.properties -->
+    <properties resource="jdbc.properties"/>
+
+    <!-- 2 配置连接数据库的环境 -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 3 加载保存sql语句的mapper文件 -->
+    <mappers>
+        <!--3.1 方法一 : 指定类的全路径 -->
+        <!--方法一前提条件 : 1 mapper文件目录 需要 mapper类的包名一致, 2 mapper文件名 和 mapper类名 一致 -->
+        <!--<mapper class="com.itheima.mapper.UserMapper"/>-->
+
+        <!--3.2 方式二: 扫描包-->
+        <!--方法二前提条件 : 1 mapper文件目录 需要 mapper类的包名一致, 2 mapper文件名 和 mapper类名 一致 -->
+        <package name="me.iroohom.mapper"/>
+    </mappers>
+</configuration>

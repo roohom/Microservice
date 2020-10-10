@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace 需要指定为 UserMapper接口的全路径 -->
+<mapper namespace="me.iroohom.mapper.UserMapper">
+    <!--  需求: 根据用户名和密码查询用户信息  -->
+    <!--
+        select标签 表名当前是一个查询语句
+            通过id属性 指定当前方法的唯一标志, id值需要和mapper接口的方法名一致
+            resultType="com.itheima.pojo.User" 属性 指定结果的封装类
+    -->
+
+    <!--1 定义 用户基本信息表的结果映射<-->
+    <resultMap id="userMap" type="me.iroohom.pojo.User" autoMapping="true">
+        <!--关联用户表的主键<-->
+        <id property="id" column="id"/>
+    </resultMap>
+
+    <!--2 定义 用户扩展用户信息的结果映射<-->
+    <resultMap id="userInfoMap" type="me.iroohom.pojo.Userinfo" autoMapping="true">
+        <!--关联用户扩展信息的主键-->
+        <id property="id" column="id"/>
+    </resultMap>
+
+
+    <!--3 定义 用户扩展订单信息信息的结果映射<-->
+    <resultMap id="orderFormMap" type="me.iroohom.pojo.Orderform" autoMapping="true">
+        <id property="oid" column="oid"/>
+        <result property="userid" column="user_id"></result>
+        <result property="createtime" column="create_time"></result>
+    </resultMap>
+
+    <!--4 定义 用户信息和扩展信息 的结果映射-->
+    <resultMap id="userWithOrderFormMap" type="me.iroohom.pojo.User" extends="userMap" autoMapping="true">
+        <!--3.1 关联 userInfo属性对象-->
+        <!--
+            association 碰到一对一关联查询, 使用这个关键字
+                property="userInfo" 指定java类上的属性
+                resultMap="userInfoMap"  将查询的结果封装 userInfoMap对应的结构中 且 交给 userInfo属性
+                autoMapping="true" 为了省略 java对象的属性名和列名一致, 如果两者一致就不用再配置了, 注意: 主键除外,必须配置
+        -->
+        <!--        <association property="userinfo" resultMap="userInfoMap" autoMapping="true"/>-->
+        <collection property="orderformList" resultMap="orderFormMap" autoMapping="true"/>
+    </resultMap>
+
+    <select id="findUserAndOrderFormById" resultMap="userWithOrderFormMap">
+        select * from user u join order_form ui on u.id = ui.user_id where u.id = #{id}
+    </select>
+
+
+    <resultMap id="userWithInfoMap" type="me.iroohom.pojo.User" extends="userMap" autoMapping="true">
+        <association property="userinfo" resultMap="userInfoMap" autoMapping="true"/>
+    </resultMap>
+
+    <!--id 是接口中函数的名字 resultMap是resultMap标签的名字 resultMap标签里定义了结果集的映射关系-->
+    <select id="findUserWithInfoById" resultMap="userWithInfoMap">
+        select * from user u join user_info ui on u.id = ui.id where u.id = #{id}
+    </select>
+
+
+</mapper>

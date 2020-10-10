@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace 需要指定为 UserMapper接口的全路径 -->
+<mapper namespace="me.iroohom.mapper.UserMapper">
+    <!--  需求: 根据用户名和密码查询用户信息  -->
+    <!--
+        select标签 表名当前是一个查询语句
+            通过id属性 指定当前方法的唯一标志, id值需要和mapper接口的方法名一致
+            resultType="com.itheima.pojo.User" 属性 指定结果的封装类
+    -->
+    <select id="queryUserByUsernameAndPassword" resultType="me.iroohom.pojo.User">
+        select * from user where username = #{uname} and password = #{upwd}
+    </select>
+
+    <!--根据id查询用户-->
+    <select id="queryUserById" resultType="me.iroohom.pojo.User">
+        select * from user where id = #{id}
+    </select>
+
+    <!--查询所有用户-->
+    <select id="queryAll" resultType="me.iroohom.pojo.User">
+        select * from user
+    </select>
+
+    <!--添加用户-->
+    <insert id="insertUser">
+        insert into user values(null ,#{username},#{password},#{name},#{birthday},#{sex},#{address})
+    </insert>
+
+    <!--修改用户-->
+    <update id="updateUser">
+        update user
+        set
+            username = #{username},
+            password = #{password},
+            name = #{name},
+            birthday = #{birthday},
+            sex = #{sex},
+            address = #{address}
+        where id = #{id}
+    </update>
+
+    <!--删除用户-->
+    <delete id="delUserById">
+        delete from user where id = #{id}
+    </delete>
+
+
+</mapper>
