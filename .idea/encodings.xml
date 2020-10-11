@@ -5,5 +5,11 @@
     <file url="file://$PROJECT_DIR$/MyBatis_XML_multiTable/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/MyBatis_XML_singleTable/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Mybatis_Annotation_multiTable/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringWithMyBatis_FullAnnotations/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringWithMybatis_FullAnnotations_UserOrder/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringWithMybatis_XmlAndAnnotation/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring_Annotation/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring_XML/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring_XmlAndAnnotations/src/main/resources" charset="UTF-8" />
   </component>
 </project>

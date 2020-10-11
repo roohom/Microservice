@@ -7,11 +7,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Mybatis_Annotation_multiTable" />
+        <module name="SpringWithMybatis_XmlAndAnnotation" />
+        <module name="SpringWithMybatis_FullAnnotations_UserOrder" />
         <module name="MyBatis_Annotation_singleTable" />
-        <module name="MyBatis_XML_multiTable" />
+        <module name="Spring_Annotation" />
         <module name="MyBatis_XML_singleTable" />
+        <module name="Mybatis_Annotation_multiTable" />
+        <module name="SpringWithMyBatis_FullAnnotations" />
+        <module name="Spring_XML" />
+        <module name="Spring_XmlAndAnnotations" />
+        <module name="MyBatis_XML_multiTable" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Spring_FullAnnotations" target="1.8" />
+      <module name="Spring_FullAnnotations_UserOrder" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -12,6 +12,12 @@
         <module>MyBatis_XML_multiTable</module>
         <module>MyBatis_Annotation_singleTable</module>
         <module>Mybatis_Annotation_multiTable</module>
+        <module>Spring_XML</module>
+        <module>Spring_XmlAndAnnotations</module>
+        <module>Spring_Annotation</module>
+        <module>SpringWithMybatis_XmlAndAnnotation</module>
+        <module>SpringWithMyBatis_FullAnnotations</module>
+        <module>SpringWithMybatis_FullAnnotations_UserOrder</module>
     </modules>
 
     <!--指定父工程的打包方式-->
