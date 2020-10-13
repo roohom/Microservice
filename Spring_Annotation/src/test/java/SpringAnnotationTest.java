@@ -16,7 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = SpringConf.class)
-public class SpringXmlAnnotationTest {
+public class SpringAnnotationTest {
 
     @Autowired
     private AccountService accountService;

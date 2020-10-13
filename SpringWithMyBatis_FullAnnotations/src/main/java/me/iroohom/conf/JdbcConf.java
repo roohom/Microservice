@@ -11,7 +11,7 @@ import javax.sql.DataSource;
 /**
  * @ClassName: JdbcConf
  * @Author: Roohom
- * @Function:
+ * @Function: JDBC配置类
  * @Date: 2020/10/11 20:28
  * @Software: IntelliJ IDEA
  */

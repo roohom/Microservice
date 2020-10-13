@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 /**
  * @ClassName: AccountServiceImpl
  * @Author: Roohom
- * @Function:
+ * @Function: AccountService实现类
  * @Date: 2020/10/11 10:52
  * @Software: IntelliJ IDEA
  */

@@ -44,15 +44,15 @@ public interface UserMapper {
     @Select("select * from user where id = #{id}")
     @Results(
             {
-                    @Result(id = true,property = "id",column = "id"),
+                    //id代表主键，true代表是，默认false
+                    @Result(id = true, property = "id", column = "id"),
                     //一对一的配置
-                    @Result(property = "userinfo",column = "id",one = @One(select = "findUserinfoById")),
+                    //column指定数据库字段的名称，property指定实体类属性的名称，jdbcType数据库字段类型
+                    @Result(property = "userinfo", column = "id", one = @One(select = "findUserinfoById")),
                     //一对多的配置
-                    @Result(property = "orderformList",column = "id",many = @Many(select = "findOrderFormById"))
+                    //column指定数据库字段的名称，property指定实体类属性的名称，jdbcType数据库字段类型
+                    @Result(property = "orderformList", column = "id", many = @Many(select = "findOrderFormById"))
             }
     )
     User findOrderFormListById(int id);
-
-
-
 }

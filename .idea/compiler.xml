@@ -8,15 +8,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SpringWithMybatis_XmlAndAnnotation" />
-        <module name="SpringWithMybatis_FullAnnotations_UserOrder" />
+        <module name="MyBatis_XML_multiTable" />
         <module name="MyBatis_Annotation_singleTable" />
         <module name="Spring_Annotation" />
-        <module name="MyBatis_XML_singleTable" />
+        <module name="Spring_XML" />
         <module name="Mybatis_Annotation_multiTable" />
         <module name="SpringWithMyBatis_FullAnnotations" />
-        <module name="Spring_XML" />
+        <module name="MyBatis_XML_singleTable" />
         <module name="Spring_XmlAndAnnotations" />
-        <module name="MyBatis_XML_multiTable" />
+        <module name="SpringWithMybatis_FullAnnotations_UserOrder" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

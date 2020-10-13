@@ -14,7 +14,7 @@ import javax.sql.DataSource;
 /**
  * @ClassName: MybatisConf
  * @Author: Roohom
- * @Function:
+ * @Function: MyBatis配置类
  * @Date: 2020/10/11 20:35
  * @Software: IntelliJ IDEA
  */
